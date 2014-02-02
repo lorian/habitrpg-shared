@@ -284,7 +284,7 @@ api.spells =
         #console.log {bonus, expBonus:bonus,upBonus:bonus*.1}
         user.stats.exp += diminishingReturns(bonus,75)
         user.party.quest.progress.up += diminishingReturns(bonus*.1,50,30) if user.party.quest.key
-
+        user.fns.updateStats user.stats # trigger stats update and levelup. Note: does NOT reload page automatically
     mpheal:
       text: 'Ethereal Surge'
       mana: 30
@@ -379,6 +379,7 @@ api.spells =
         user.stats.exp += bonus
         user.stats.gp += bonus
         # user.party.quest.progress.up += bonus if user.party.quest.key # remove hurting bosses for rogues, seems OP for now
+        user.fns.updateStats user.stats # trigger stats update and levelup. Note: does NOT reload page automatically
     toolsOfTrade:
       text: 'Tools of the Trade'
       mana: 25
