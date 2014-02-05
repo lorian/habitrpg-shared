@@ -284,7 +284,9 @@ api.spells =
         #console.log {bonus, expBonus:bonus,upBonus:bonus*.1}
         user.stats.exp += diminishingReturns(bonus,75)
         user.party.quest.progress.up += diminishingReturns(bonus*.1,50,30) if user.party.quest.key
+        console.log "Casting spell"
         user.fns.updateStats user.stats # trigger stats update and levelup. Note: does NOT reload page automatically
+        #user.ops.update({params:{body:updates}})
     mpheal:
       text: 'Ethereal Surge'
       mana: 30
